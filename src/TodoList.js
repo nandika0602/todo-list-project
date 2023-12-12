@@ -12,7 +12,7 @@ const TodoList = () => {
 
     //ADDING A TASK TO LIST
     const addTask = () => {
-        if(!taskName){
+        if(!taskName.trim()){
             setError("Please enter any task. Task should not be empty")
         } else if(editTask) {
             const updatedList = lists.map((list) => {
