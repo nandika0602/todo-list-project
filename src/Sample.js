@@ -45,9 +45,9 @@ const Sample = () => {
             </div>
             <div>
                 <h1>RADIO {gender}</h1>
-                <input type="radio" name="gender" checked={gender === 'Male'} value="Male" onChange={(e) => setGender(e.target.value)}/> Male
-                <input type="radio" name="gender" checked={gender === 'Female'} value="Female" onChange={(e) => setGender(e.target.value)}/> Female
-                <input type="radio" name="gender" checked={gender === 'Others'} value="Others" onChange={(e) => setGender(e.target.value)}/> Others
+                <input type="radio" checked={gender === 'Male'} value="Male" onChange={(e) => setGender(e.target.value)}/> Male
+                <input type="radio" checked={gender === 'Female'} value="Female" onChange={(e) => setGender(e.target.value)}/> Female
+                <input type="radio" checked={gender === 'Others'} value="Others" onChange={(e) => setGender(e.target.value)}/> Others
             </div>
             <div>
                 <h1>INPUT {phone}</h1>
@@ -56,9 +56,9 @@ const Sample = () => {
             <div>
                 <h1>OPTION DROPDOWN {marital}</h1>
                 <select value={marital} onChange={(e) => {setMarital(e.target.value)}}>
-                    <option>Select your Marital Status</option>
-                    <option>Married</option>
-                    <option>Unmarried</option>
+                    <option value="">Select your Marital Status</option>
+                    <option value="Married">Married</option>
+                    <option value="Unmarried">Unmarried</option>
                 </select>
             </div>
             <div>
@@ -68,14 +68,39 @@ const Sample = () => {
             </div>
             <div>
                 <h1>RADIO {join}</h1>
-                <input type="radio" name="join" checked={join === 'Yes'} value="Yes" onChange={(e) => setJoin(e.target.value)}/> Yes
-                <input type="radio" name="join" checked={join === 'No'} value="No" onChange={(e) => setJoin(e.target.value)}/> No
+                <input type="radio" checked={join === 'Yes'} value="Yes" onChange={(e) => setJoin(e.target.value)}/> Yes
+                <input type="radio" checked={join === 'No'} value="No" onChange={(e) => setJoin(e.target.value)}/> No
             </div>
             <button className="bg-green-600 text-white mt-3 px-4 py-1 rounded-lg" onClick={() => addTask()}><FontAwesomeIcon icon={faPlus} /></button>
             <div>
+                <table>
+                    <th>
+                    <td>FIRST_NAME</td>
+                    <td>MIDDLE_NAME</td>
+                    <td>LAST_NAME</td>
+                    <td>GENDER</td>
+                    <td>PHONE_NO</td>
+                    <td>MARITAL_STATUS</td>
+                    <td>JOINING_DATE</td>
+                    <td>MODE_OF_CONTACT</td>                                                                                                       
+                    </th>
                 {list.map((val) => {
-                   return <li>{val.fname + val.mname + val.lname + val.gender + val.phone + val.marital + val.join + val.contact}</li>
+                   return(
+                        <tr>
+                            <td></td>
+                            <td>{val.fname}</td>
+                            <td>{val.mname}</td>
+                            <td>{val.lname}</td>
+                            <td>{val.gender}</td>
+                            <td>{val.phone}</td>
+                            <td>{val.marital}</td>
+                            <td>{val.join}</td>
+                            <td>{val.contact}</td>
+                        </tr>
+                   )
+                   // <li>{val.fname + val.mname + val.lname + val.gender + val.phone + val.marital + val.join + val.contact}</li>
                 })}
+                </table>
             </div>
         </div>
     )
