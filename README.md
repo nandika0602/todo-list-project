@@ -1,3 +1,21 @@
+# ToDoList Application
+
+## Overview
+
+This project is a simple ToDoList application that allows users to add, update, and delete tasks. Additionally, it includes a feature to display an error message if a user attempts to add an empty task.
+
+## Features
+
+- **Add a Task:** Users can add tasks to the ToDoList.
+- **Update a Task:** Modify existing tasks in the list.
+- **Delete a Task:** Remove tasks from the list.
+- **Error Handling:** If a user tries to add an empty task, an error message is displayed.
+
+## Technologies Used
+
+React
+Tailwind CSS: Styling is done using Tailwind CSS, offering a utility-first and highly customizable approach.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
